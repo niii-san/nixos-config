@@ -1,0 +1,108 @@
+/**
+ * Power Menu — Tokyo Night Moon
+ * Vertical list: icon + label, selected card expands with full color
+ */
+
+* {
+    background-color: transparent;
+    text-color:       #c8d3f5;
+    font:             "JetBrainsMonoNL Nerd Font 14";
+}
+
+window {
+    background-color: #1e2030;
+    border-width:     1px;
+    border-color:     #2d3f76;
+    border-radius:    16px;
+    width:            260px;
+    padding:          16px;
+    location:         center;
+    anchor:           center;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing:          8px;
+    children:         [ inputbar, listview ];
+}
+
+/* Header */
+inputbar {
+    background-color: transparent;
+    padding:          0px 4px 8px 4px;
+    border-width:     0px 0px 1px 0px;
+    border-color:     #2f334d;
+    children:         [ prompt ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       #636da6;
+    font:             "JetBrainsMonoNL Nerd Font 12";
+    horizontal-align: 0.5;
+}
+
+/* List */
+listview {
+    background-color: transparent;
+    columns:          1;
+    lines:            5;
+    spacing:          6px;
+    scrollbar:        false;
+    fixed-height:     true;
+    cycle:            true;
+}
+
+/* Card */
+element {
+    background-color: transparent;
+    border-radius:    10px;
+    padding:          10px 16px;
+    spacing:          0px;
+    orientation:      horizontal;
+    cursor:           pointer;
+}
+
+element-icon {
+    size:             0px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       #636da6;
+    horizontal-align: 0;
+    vertical-align:   0.5;
+    font:             "JetBrainsMonoNL Nerd Font 15";
+}
+
+/* Normal */
+element normal.normal {
+    background-color: transparent;
+    text-color:       #636da6;
+}
+
+element normal.normal element-text {
+    text-color: #636da6;
+}
+
+/* Selected — blue card */
+element selected.normal {
+    background-color: #2d3f76;
+    border-width:     1px;
+    border-color:     #82aaff;
+    text-color:       #ffffff;
+}
+
+/* Shutdown — urgent = red */
+element normal.urgent {
+    background-color: transparent;
+    text-color:       #ff757f;
+}
+
+element selected.urgent {
+    background-color: #3d1f27;
+    border-width:     1px;
+    border-color:     #ff757f;
+    text-color:       #ff9ea6;
+}

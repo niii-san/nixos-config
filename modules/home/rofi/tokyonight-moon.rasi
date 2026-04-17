@@ -1,0 +1,179 @@
+/**
+ * Tokyo Night Moon — Rofi Theme
+ * Nishan's NixOS / Hyprland setup
+ */
+
+* {
+    /* ── Tokyo Night Moon Palette (with alpha) ────────────── */
+    bg-dark:        #1e203099;   /* ~60% opacity */
+    bg:             #22243680;   /* ~50% opacity */
+    bg-alt:         #2f334d66;   /* ~40% opacity */
+    bg-sel:         #2d3f76cc;   /* ~80% opacity */
+    bg-hover:       #383e6b99;
+    fg:             #c8d3f5;
+    fg-dim:         #636da6;
+    blue:           #82aaff;
+    purple:         #c099ff;
+    cyan:           #86e1fc;
+    green:          #c3e88d;
+    red:            #ff757f;
+    yellow:         #ffc777;
+    orange:         #ff966c;
+
+    font:                   "JetBrainsMonoNL Nerd Font 13";
+    background-color:       transparent;
+    text-color:             @fg;
+}
+
+window {
+    background-color:   @bg-dark;
+    border:             1px solid;
+    border-color:       #82aaff55;   /* softer glow border */
+    border-radius:      20px;
+    width:              660px;
+    padding:            0px;
+    location:           center;
+    anchor:             center;
+}
+
+
+
+
+
+
+
+/* ── Layout ───────────────────────────────────────────────── */
+mainbox {
+    background-color:   transparent;
+    spacing:            0px;
+    padding:            0px;
+    children:           [ inputbar, listview, mode-switcher ];
+}
+
+/* ── Search bar ───────────────────────────────────────────── */
+inputbar {
+    background-color:   @bg;
+    border-radius:      16px 16px 0px 0px;
+    padding:            16px 18px;
+    spacing:            12px;
+    children:           [ prompt, entry ];
+    border:             0px 0px 1px 0px;
+    border-color:       @bg-alt;
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @blue;
+    font:               "JetBrainsMono Nerd Font Bold 16";
+    vertical-align:     0.5;
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @fg;
+    placeholder:        "Search...";
+    placeholder-color:  @fg-dim;
+    font:               "JetBrainsMono Nerd Font 14";
+    vertical-align:     0.5;
+    cursor:             text;
+}
+
+/* ── Results list ─────────────────────────────────────────── */
+listview {
+    background-color:   transparent;
+    padding:            10px;
+    spacing:            3px;
+    lines:              9;
+    columns:            1;
+    fixed-height:       true;
+    scrollbar:          true;
+    border:             0px 0px 1px 0px;
+    border-color:       @bg-alt;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      10px;
+    padding:            10px 14px;
+    spacing:            14px;
+    orientation:        horizontal;
+    children:           [ element-icon, element-text ];
+    cursor:             pointer;
+}
+
+/* Normal unselected */
+element normal.normal,
+element alternate.normal {
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+/* Hovered */
+element normal.urgent,
+element alternate.urgent {
+    background-color:   transparent;
+    text-color:         @red;
+}
+
+/* Selected */
+element selected.normal {
+    background-color:   @bg-sel;
+    text-color:         @fg;
+    border:             0px 0px 0px 3px;
+    border-color:       @blue;
+    border-radius:      0px 10px 10px 0px;
+}
+
+element selected.urgent {
+    background-color:   @bg-sel;
+    text-color:         @red;
+}
+
+/* Icon */
+element-icon {
+    background-color:   transparent;
+    size:               36px;
+    vertical-align:     0.5;
+    cursor:             inherit;
+}
+
+/* Text */
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    vertical-align:     0.5;
+    cursor:             inherit;
+    highlight:          bold #86e1fc;
+}
+
+/* Scrollbar */
+scrollbar {
+    background-color:   @bg-alt;
+    handle-color:       @blue;
+    handle-width:       4px;
+    border-radius:      4px;
+    width:              4px;
+    margin:             0px 2px;
+}
+
+/* ── Mode switcher (bottom bar) ───────────────────────────── */
+mode-switcher {
+    background-color:   @bg;
+    border-radius:      0px 0px 16px 16px;
+    padding:            10px;
+    spacing:            6px;
+}
+
+button {
+    background-color:   @bg-alt;
+    text-color:         @fg-dim;
+    border-radius:      8px;
+    padding:            6px 14px;
+    cursor:             pointer;
+}
+
+button selected {
+    background-color:   @bg-sel;
+    text-color:         @blue;
+    font:               "JetBrainsMono Nerd Font Bold 13";
+}
