@@ -51,7 +51,7 @@
         XDG_CURRENT_DESKTOP = "niri";
         XDG_SESSION_DESKTOP = "niri";
         xcursor-theme = "volantes_cursors";
-        xcursor-size = 32;
+        xcursor-size = "32";
       };
 
       gestures.hot-corners.enable = false;
