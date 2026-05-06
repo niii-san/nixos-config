@@ -43,13 +43,15 @@
       cursor = {
         hide-after-inactive-ms = 3000;
         hide-when-typing = true;
-        xcursor-theme = "volantes_cursors";
-        xcursor-size = 32;
+        size = 32;
+        theme = "volantes_cursors";
       };
 
       environment = {
         XDG_CURRENT_DESKTOP = "niri";
         XDG_SESSION_DESKTOP = "niri";
+        xcursor-theme = "volantes_cursors";
+        xcursor-size = 32;
       };
 
       gestures.hot-corners.enable = false;
