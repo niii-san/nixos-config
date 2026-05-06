@@ -375,9 +375,9 @@
         ];
 
         # Screenshots
-        "Mod+S".action.spawn = [ "screenshot.sh" ];
+        "Mod+S".action.spawn = [ "niri-screenshot.sh" ];
         "Mod+Shift+S".action.spawn = [
-          "screenshot.sh"
+          "niri-screenshot.sh"
           "screen"
         ];
 
