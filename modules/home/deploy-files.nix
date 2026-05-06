@@ -1,6 +1,6 @@
 { ... }:
 {
-  home.file.".local/bin/screenshot.sh" = {
+  home.file.".local/bin/niri-screenshot.sh" = {
     source = ../scripts/niri-screenshot.sh;
     executable = true;
   };
