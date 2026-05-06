@@ -6,7 +6,22 @@
   };
 
   services.upower.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        UserspaceHID = "true";
+      };
+
+      LE = {
+        MinConnectionInterval = 7; # 7 * 1.25ms = 8.75ms
+        MaxConnectionInterval = 9; # 9 * 1.25ms = 11.25ms
+        ConnectionLatency = 0;
+        SupervisionTimeout = 100;
+      };
+    };
+
+  };
 
   services.blueman.enable = true;
 
