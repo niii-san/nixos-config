@@ -56,7 +56,7 @@
 
       gestures.hot-corners.enable = false;
 
-      outputs."eDP-1".scale = 1.2;
+      outputs."eDP-1".scale = 1.25;
 
       overview = {
         workspace-shadow.enable = false;

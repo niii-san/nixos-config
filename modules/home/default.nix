@@ -30,13 +30,12 @@
     ./brave/default.nix
     ./fish/default.nix
     ./deploy-files.nix
-    # ./flake-pkgs.nix
+    ./flake-pkgs.nix
   ];
 
   home.sessionPath = [ "$HOME/.local/bin" ];
   home.username = "nishansys";
   home.homeDirectory = "/home/nishansys";
   home.stateVersion = "25.11";
-
 
 }
