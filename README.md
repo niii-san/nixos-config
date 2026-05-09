@@ -220,6 +220,6 @@ sudo nixos-rebuild switch --flake .#nixos
 
 <div align="center">
 
-Built with ❄ on NixOS
+Built with ❄ on NixOS, Feel free to use and customize :) 
 
 </div>
