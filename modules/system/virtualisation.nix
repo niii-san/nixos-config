@@ -18,7 +18,6 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true; # TPM support
-      ovmf.enable = true; # UEFI
       vhostUserPackages = with pkgs; [ virtiofsd ];
     };
   };
