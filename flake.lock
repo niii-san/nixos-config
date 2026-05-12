@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "burpsuitepro": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772862857,
+        "narHash": "sha256-qT/j4fC2GiTfCwYhpmY0ltuPl2NjYK2eDdC7d/wPeH0=",
+        "owner": "xiv3r",
+        "repo": "Burpsuite-Professional",
+        "rev": "417c54a857fd824d83ebc168d423d29fbcfb3d29",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xiv3r",
+        "repo": "Burpsuite-Professional",
+        "type": "github"
+      }
+    },
     "claude-code": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -279,6 +299,7 @@
     },
     "root": {
       "inputs": {
+        "burpsuitepro": "burpsuitepro",
         "claude-code": "claude-code",
         "home-manager": "home-manager",
         "niri": "niri",

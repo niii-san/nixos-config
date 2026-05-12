@@ -14,7 +14,7 @@
     termguicolors = true;
 
     # Indentation
-    tabstop = 2;
+    tabstop = 4;
     shiftwidth = 2;
     softtabstop = 2;
     expandtab = true;
@@ -32,6 +32,7 @@
     wrap = false;
     list = true;
     listchars = {
+      tab = "  "; # invisible, just suppresses the ^I
       trail = "·";
       extends = ">";
       precedes = "<";
