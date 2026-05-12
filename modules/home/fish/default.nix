@@ -25,6 +25,8 @@
       fm = "yazi";
       cdlw = "cd /run/media/nishansys/lw";
 
+      vm = "GDK_SCALE=1 GDK_DPI_SCALE=1 GDK_BACKEND=x11 virt-manager";
+
     };
 
     plugins = [
