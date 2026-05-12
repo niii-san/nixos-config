@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -17,5 +17,11 @@
 
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   boot.supportedFilesystems = [ "ntfs" ];
+
+  boot.extraModprobeConfig = ''
+    options rtw89_pci disable_clkreq=y disable_aspm_l1=y disable_aspm_l1ss=y
+  '';
 }

@@ -40,10 +40,6 @@
 
   security.polkit.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    autoPrune.enable = true;
-  };
 
   services.postgresql = {
     enable = true;
