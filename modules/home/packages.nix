@@ -32,6 +32,10 @@
     postgresql_17
     prisma-engines
 
+    # MongoDB
+    mongodb-compass
+    mongosh
+
     # hypr
     hypridle
     hyprlock
