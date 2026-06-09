@@ -625,15 +625,15 @@
       };
 
       idle = {
-        enabled = false;
-        screenOffTimeout = 600;
-        lockTimeout = 660;
-        suspendTimeout = 1800;
+        enabled = true;
+        screenOffTimeout = 300; # 5 min → screen off 10% brightness
+        lockTimeout = 960; # 16 min → lock
+        suspendTimeout = 1140; # 19 min → suspend
         fadeDuration = 5;
-        screenOffCommand = "";
-        lockCommand = "";
-        suspendCommand = "";
-        resumeScreenOffCommand = "";
+        lockCommand = "hyprlock";
+        suspendCommand = "systemctl suspend";
+        screenOffCommand = "brightnessctl -s set 10%";
+        resumeScreenOffCommand = "brightnessctl -r";
         resumeLockCommand = "";
         resumeSuspendCommand = "";
         customCommands = "[]";

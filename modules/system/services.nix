@@ -40,9 +40,6 @@
 
   security.polkit.enable = true;
 
-  services.mongodb = {
-    enable = true;
-  };
 
   services.postgresql = {
     enable = true;

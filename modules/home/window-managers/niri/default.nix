@@ -558,15 +558,15 @@
     };
   };
 
-  services.swayidle = {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 300;
-        command = "noctalia-shell ipc call lockscreen lock";
-      }
-    ];
-  };
+  # services.swayidle = {
+  #   enable = true;
+  #   timeouts = [
+  #     {
+  #       timeout = 960;
+  #       command = "noctalia-shell ipc call lockscreen lock";
+  #     }
+  #   ];
+  # };
 
   home.packages = with pkgs; [
     xwayland-satellite
