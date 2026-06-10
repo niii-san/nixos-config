@@ -25,7 +25,7 @@
       vim-tmux-navigator # <C-h/j/k/l> across panes AND nvim splits
       yank # system-clipboard yank in copy-mode
       resurrect # save/restore sessions across reboots
-      continuum # auto-save resurrect every 10 min
+      # continuum # auto-save resurrect every 10 min
       prefix-highlight # status bar lights up when prefix is active
       {
         plugin = tokyo-night-tmux;
@@ -49,13 +49,13 @@
           set -g @resurrect-strategy-nvim 'session'   # restore nvim sessions too
         '';
       }
-      {
-        plugin = continuum;
-        extraConfig = ''
-          # set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '10'
-        '';
-      }
+      # {
+      #   plugin = continuum;
+      #   extraConfig = ''
+      #     # set -g @continuum-restore 'on'
+      #     set -g @continuum-save-interval '60'
+      #   '';
+      # }
     ];
 
     extraConfig = ''
