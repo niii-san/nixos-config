@@ -1,7 +1,7 @@
 { pkgs, ... }:
 # Desktop shell
 {
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
 
     settings = {
