@@ -126,10 +126,14 @@
     # Highlight color codes inline (#fff, rgb(), etc.)
     colorizer = {
       enable = true;
-      userDefaultOptions = {
-        css = true;
-        html = true;
-        names = false;
+      settings = {
+        options = {
+          parsers = {
+            css = true;
+            html = true;
+            names = false;
+          };
+        };
       };
     };
   };
