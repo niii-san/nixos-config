@@ -36,11 +36,11 @@
       };
     };
 
-    programs.nixvim.plugins.vim-tmux-navigator = {
+    plugins.nixvim.plugins.vim-tmux-navigator = {
       enable = true;
     };
 
-    programs.nixvim.plugins.harpoon = {
+    plugins.harpoon = {
       enable = true;
       enableTelescope = true;
     };
