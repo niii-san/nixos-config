@@ -124,7 +124,7 @@
     };
 
     # Highlight color codes inline (#fff, rgb(), etc.)
-    nvim-colorizer = {
+    colorizer = {
       enable = true;
       userDefaultOptions = {
         css = true;
