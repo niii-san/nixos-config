@@ -36,7 +36,7 @@
       };
     };
 
-    plugins.vim-tmux-navigator = {
+    plugins.tmux-navigator = {
       enable = true;
     };
 
