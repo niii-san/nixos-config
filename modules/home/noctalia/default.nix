@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 #  ███╗   ██╗ ██████╗  ██████╗████████╗ █████╗ ██╗     ██╗ █████╗
 #  ████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██║     ██║██╔══██╗
 #  ██╔██╗ ██║██║   ██║██║        ██║   ███████║██║     ██║███████║
@@ -95,13 +95,6 @@
             "starship"
           ];
         };
-      };
-
-      # blurred + tinted wallpaper behind windows / niri overview
-      backdrop = {
-        enabled = true;
-        blur_intensity = 0.6;
-        tint_intensity = 0.35;
       };
 
       # ╔══════════════════════════════════════════════════════════╗
@@ -262,122 +255,38 @@
       };
 
       # ╔══════════════════════════════════════════════════════════╗
-      # ║  ✦ BAR — floating islands over a transparent strip       ║
+      # ║  ✦ BAR — solid strip, 2px off the top, no islands        ║
       # ║                                                          ║
-      # ║  ╭──────────╮ ╭────────╮  ╭───────────╮  ╭────╮ ╭──────╮ ║
-      # ║  │ ⏻ ○●○○  │ │ window │  │ 12:00  ☀ │  │▁▃▅▇│ │ ⚙ 🔋 │ ║
-      # ║  ╰──────────╯ ╰────────╯  ╰───────────╯  ╰────╯ ╰──────╯ ║
+      # ║  ┌──────────────────────────────────────────────────┐   ║
+      # ║  │ ❄ date time ♪song window  ●○○○  icons······🔋 ⏻ │   ║
+      # ║  └──────────────────────────────────────────────────┘   ║
       # ╚══════════════════════════════════════════════════════════╝
       bar = {
         main = {
           position = "top";
-          thickness = 40;
-          background_opacity = 0.0;
-          margin_edge = 8;
-          margin_ends = 14;
-          padding = 6;
-          widget_spacing = 8;
-          radius = 20;
+          thickness = 38;
+          background_opacity = 1.0;
+          margin_edge = 2;
+          margin_ends = 0;
+          padding = 10;
+          widget_spacing = 10;
+          radius = 10;
           shadow = true;
           auto_hide = false;
           reserve_space = true;
           font_weight = 600;
 
-          # every widget rides in a translucent capsule by default
-          capsule = true;
-          capsule_fill = "surface_variant";
-          capsule_opacity = 0.82;
-
-          # capsule islands
-          capsule_group = [
-            {
-              id = "nav";
-              members = [
-                "control-center"
-                "workspaces"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "now-playing";
-              members = [
-                "media"
-                "visualizer"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "datetime";
-              members = [
-                "clock"
-                "weather"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "stats";
-              members = [
-                "cpu"
-                "ram"
-                "net_rx"
-                "net_tx"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "connectivity";
-              members = [
-                "network"
-                "bluetooth"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "levels";
-              members = [
-                "volume"
-                "microphone"
-                "brightness"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "system";
-              members = [
-                "tray"
-                "screenshot"
-                "clipboard"
-                "notifications"
-              ];
-              opacity = 0.82;
-            }
-            {
-              id = "power";
-              members = [
-                "battery"
-                "caffeine"
-                "session"
-              ];
-              opacity = 0.82;
-            }
-          ];
-
           start = [
             "control-center"
-            "workspaces"
-            "active_window"
-            "media"
-            "visualizer"
-          ];
-          center = [
             "clock"
             "weather"
+            "media"
+            "active_window"
           ];
+          center = [ "workspaces" ];
           end = [
             "cpu"
             "ram"
-            "net_rx"
-            "net_tx"
             "network"
             "bluetooth"
             "volume"
@@ -398,6 +307,12 @@
       # ║  ✦ WIDGETS — per-widget tuning                           ║
       # ╚══════════════════════════════════════════════════════════╝
       widget = {
+        # ❄ NixOS snowflake, tinted with the wallpaper accent
+        "control-center" = {
+          custom_image = "${config.programs.noctalia.package}/share/noctalia/assets/images/distros/nixos.svg";
+          custom_image_colorize = true;
+        };
+
         clock = {
           format = "󰃭 {:%a %d %b}   {:%I:%M %p}";
           tooltip_format = "{:%A, %d %B %Y — %I:%M:%S %p}";
@@ -409,26 +324,16 @@
           show_temperature = true;
         };
 
-        active_window = {
-          display = "icon_and_text";
-          max_length = 320;
-          title_scroll = "on_hover";
-        };
-
         media = {
-          max_length = 340;
+          max_length = 260;
           art_size = 18;
           title_scroll = "always";
         };
 
-        visualizer = {
-          type = "audio_visualizer";
-          width = 52;
-          bands = 14;
-          mirrored = true;
-          centered = true;
-          color_1 = "primary";
-          color_2 = "tertiary";
+        active_window = {
+          display = "icon_and_text";
+          max_length = 280;
+          title_scroll = "on_hover";
         };
 
         workspaces = {
@@ -446,10 +351,12 @@
           drawer = true;
         };
 
+        # icon-only stats — hover for the full system readout
         cpu = {
           type = "sysmon";
           stat = "cpu_usage";
           display = "gauge";
+          show_label = false;
           highlight_color = "error";
         };
 
@@ -457,21 +364,13 @@
           type = "sysmon";
           stat = "ram_pct";
           display = "gauge";
+          show_label = false;
           highlight_color = "error";
         };
 
-        net_rx = {
-          type = "sysmon";
-          stat = "net_rx";
-          display = "text";
-          network_speed_compact = true;
-        };
-
-        net_tx = {
-          type = "sysmon";
-          stat = "net_tx";
-          display = "text";
-          network_speed_compact = true;
+        # icon-only — speeds and SSID live in the hover tooltip
+        network = {
+          show_label = false;
         };
 
         microphone = {
