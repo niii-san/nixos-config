@@ -38,6 +38,11 @@
           matches = [ { namespace = "^noctalia-wallpaper.*"; } ];
           place-within-backdrop = true;
         }
+        {
+          # Noctalia blurred/tinted backdrop layer (overview blur)
+          matches = [ { namespace = "^noctalia-backdrop.*"; } ];
+          place-within-backdrop = true;
+        }
       ];
 
       cursor = {
