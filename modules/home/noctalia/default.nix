@@ -281,6 +281,7 @@
             "gap"
             "clock"
             "gap"
+            "gap"
             "weather"
             "gap"
             "gap"
@@ -294,9 +295,9 @@
             "gap"
             "cpu"
             "ram"
+            "gap"
+            "gap"
             "network"
-            "gap"
-            "gap"
             "bluetooth"
             "volume"
             "microphone"
@@ -327,7 +328,7 @@
         };
 
         clock = {
-          format = "{:%H:%M:%S} 󰃭 {:%a %d %b}";
+          format = "{:%H:%M:%S}  󰃭 {:%a %d %b}";
           tooltip_format = "{:%A, %d %B %Y — %I:%M:%S %p}";
           color = "primary";
         };
@@ -335,13 +336,13 @@
         weather = {
           show_condition = true;
           show_temperature = true;
-          color = "primary";
+          color = "tertiary";
         };
 
         # breathing room between widget groups
         gap = {
           type = "spacer";
-          length = 18;
+          length = 16;
         };
 
         # song + album art, vanishes when nothing plays
@@ -356,7 +357,7 @@
         # mini cava-style bars glued to the media block
         media_viz = {
           type = "audio_visualizer";
-          width = 56;
+          width = 60;
           bands = 20;
           mirrored = true;
           centered = true;
@@ -378,8 +379,9 @@
           focused_color = "primary";
           occupied_color = "tertiary";
           empty_color = "outline";
-          pill_scale = 1.2;
-          active_pill_size = 2.6;
+          pill_scale = 1.5;
+          active_pill_size = 2.4;
+          hide_when_empty = true;
         };
 
         tray = {
