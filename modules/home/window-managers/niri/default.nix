@@ -128,7 +128,7 @@
 
       # Run at startup
       spawn-at-startup = [
-        { command = [ "noctalia-shell" ]; }
+        { command = [ "noctalia" ]; }
         { command = [ "xwayland-satellite" ]; }
         { command = [ "hyprlock" ]; }
         {
@@ -326,7 +326,7 @@
         "Mod+Q".action.spawn = [ "thunar" ];
 
         "Mod+Escape".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "sessionMenu"
@@ -335,7 +335,7 @@
 
         # Launcher
         "Mod+Space".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "launcher"
@@ -344,7 +344,7 @@
 
         # controlCenter
         "Mod+Shift+Space".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "controlCenter"
@@ -353,7 +353,7 @@
 
         # Noctalia Settings
         "Mod+Shift+Comma".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "settings"
@@ -362,7 +362,7 @@
 
         # Wallpaper picker
         "Mod+W".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "wallpaper"
@@ -452,14 +452,14 @@
         "Mod+Shift+M".action.quit = { };
 
         "Mod+Alt+L".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "lockScreen"
           "lock"
         ];
         "Mod+Shift+B".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "bar"
@@ -467,14 +467,14 @@
         ];
 
         "Mod+Shift+N".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "nightLight"
           "toggle"
         ];
         "Mod+Shift+L".action.spawn = [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
           "lockScreen"
@@ -563,7 +563,7 @@
   #   timeouts = [
   #     {
   #       timeout = 960;
-  #       command = "noctalia-shell ipc call lockscreen lock";
+  #       command = "noctalia ipc call lockscreen lock";
   #     }
   #   ];
   # };

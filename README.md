@@ -6,7 +6,7 @@
 
 [![NixOS](https://img.shields.io/badge/NixOS-unstable-5277C3?style=flat-square&logo=nixos&logoColor=white)](https://nixos.org)
 [![Niri](https://img.shields.io/badge/WM-niri-8AADF4?style=flat-square)](https://github.com/YaLTeR/niri)
-[![Noctalia](https://img.shields.io/badge/Shell-noctalia-C3E88D?style=flat-square)](https://github.com/noctalia-dev/noctalia-shell)
+[![Noctalia](https://img.shields.io/badge/Shell-noctalia-C3E88D?style=flat-square)](https://github.com/noctalia-dev/noctalia)
 [![Home Manager](https://img.shields.io/badge/Home_Manager-enabled-CBA6F7?style=flat-square)](https://github.com/nix-community/home-manager)
 
 </div>
@@ -38,7 +38,7 @@ Everything is managed declaratively via Nix flakes and Home Manager. Rebuilding 
 |---|---|
 | OS | NixOS (unstable) |
 | Compositor | [niri](https://github.com/YaLTeR/niri) |
-| Desktop Shell | [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell) |
+| Desktop Shell | [noctalia-shell](https://github.com/noctalia-dev/noctalia) |
 | Editor | [nixvim](https://github.com/nix-community/nixvim) (Neovim — Tokyo Night Moon) |
 | Terminal | [foot](https://codeberg.org/dnkl/foot) |
 | Shell | bash + [fish](https://fishshell.com) |
