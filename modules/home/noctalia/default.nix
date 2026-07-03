@@ -255,17 +255,17 @@
       };
 
       # ╔══════════════════════════════════════════════════════════╗
-      # ║  ✦ BAR — solid strip, 2px off the top, no islands        ║
+      # ║  ✦ BAR — glass strip, 2px off the top, grouped w/ air    ║
       # ║                                                          ║
       # ║  ┌──────────────────────────────────────────────────┐   ║
-      # ║  │ ❄ date time ♪song window  ●○○○  icons······🔋 ⏻ │   ║
+      # ║  │ ❄ date ☁ win   ●○○○   ♪song▁▃▅ stats net ··🔋 ⏻ │   ║
       # ║  └──────────────────────────────────────────────────┘   ║
       # ╚══════════════════════════════════════════════════════════╝
       bar = {
         main = {
           position = "top";
           thickness = 38;
-          background_opacity = 1.0;
+          background_opacity = 0.6;
           margin_edge = 2;
           margin_ends = 0;
           padding = 10;
@@ -280,22 +280,28 @@
             "control-center"
             "clock"
             "weather"
-            "media"
+            "gap"
             "active_window"
           ];
           center = [ "workspaces" ];
           end = [
+            "media"
+            "media_viz"
+            "gap"
             "cpu"
             "ram"
             "network"
+            "gap"
             "bluetooth"
             "volume"
             "microphone"
             "brightness"
+            "gap"
             "tray"
             "screenshot"
             "clipboard"
             "notifications"
+            "gap"
             "battery"
             "caffeine"
             "session"
@@ -324,10 +330,31 @@
           show_temperature = true;
         };
 
+        # breathing room between widget groups
+        gap = {
+          type = "spacer";
+          length = 16;
+        };
+
+        # song + album art, vanishes when nothing plays
         media = {
-          max_length = 260;
-          art_size = 18;
+          min_length = 80;
+          max_length = 160;
+          art_size = 20;
           title_scroll = "always";
+          hide_when_no_media = true;
+        };
+
+        # mini cava-style bars glued to the media block
+        media_viz = {
+          type = "audio_visualizer";
+          width = 56;
+          bands = 20;
+          mirrored = true;
+          centered = true;
+          show_when_idle = false;
+          color_1 = "primary";
+          color_2 = "tertiary";
         };
 
         active_window = {
@@ -368,9 +395,9 @@
           highlight_color = "error";
         };
 
-        # icon-only — speeds and SSID live in the hover tooltip
+        # label = connected SSID; speeds live in the hover tooltip
         network = {
-          show_label = false;
+          show_label = true;
         };
 
         microphone = {
@@ -434,21 +461,22 @@
             };
           };
 
+          # wide linear bars along the bottom (fancy_* is radial-only)
           viz_floor = {
-            type = "fancy_audio_visualizer";
+            type = "audio_visualizer";
             output = "eDP-1";
             cx = 1024.0;
-            cy = 1140.0;
-            box_width = 880.0;
-            box_height = 200.0;
+            cy = 1150.0;
+            box_width = 900.0;
+            box_height = 150.0;
             rotation = 0.0;
             settings = {
-              visualization_mode = "bars";
-              bar_width = 0.6;
-              sensitivity = 1.5;
-              fade_when_idle = true;
-              primary_color = "primary";
-              secondary_color = "tertiary";
+              bands = 64;
+              mirrored = true;
+              centered = true;
+              show_when_idle = false;
+              color_1 = "primary";
+              color_2 = "tertiary";
             };
           };
         };
