@@ -8,8 +8,8 @@
       input = {
         keyboard = {
           xkb.layout = "us";
-          repeat-delay = 250;
-          repeat-rate = 35;
+          repeat-delay = 450;
+          repeat-rate = 25;
         };
         touchpad = {
           accel-profile = "adaptive";

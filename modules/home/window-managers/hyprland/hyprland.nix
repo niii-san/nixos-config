@@ -2,6 +2,7 @@
 {
 
   wayland.windowManager.hyprland = {
+    configType = "hyprlang";
     enable = true;
     settings = {
 

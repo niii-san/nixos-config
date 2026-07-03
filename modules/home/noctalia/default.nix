@@ -203,7 +203,7 @@
       # ║  ✦ HOT CORNERS — flick the mouse, run the shell          ║
       # ╚══════════════════════════════════════════════════════════╝
       hot_corners = {
-        enabled = true;
+        enabled = false;
         top_left = {
           action = "overview";
         };
@@ -233,7 +233,7 @@
       # ║  ✦ DOCK — macOS-style, magnifying, auto-hiding           ║
       # ╚══════════════════════════════════════════════════════════╝
       dock = {
-        enabled = true;
+        enabled = false;
         position = "bottom";
         auto_hide = true;
         reserve_space = false;
@@ -264,9 +264,9 @@
       bar = {
         main = {
           position = "top";
-          thickness = 38;
+          thickness = 32;
           background_opacity = 0.6;
-          margin_edge = 2;
+          margin_edge = 0;
           margin_ends = 0;
           padding = 10;
           widget_spacing = 10;
@@ -281,7 +281,6 @@
             "gap"
             "clock"
             "gap"
-            "gap"
             "weather"
             "gap"
             "gap"
@@ -292,10 +291,8 @@
             "media"
             "media_viz"
             "gap"
-            "gap"
             "cpu"
             "ram"
-            "gap"
             "gap"
             "network"
             "bluetooth"
@@ -308,7 +305,6 @@
             # "screenshot"
             "clipboard"
             "notifications"
-            "gap"
             "gap"
             "battery"
             "caffeine"
@@ -348,8 +344,8 @@
         # song + album art, vanishes when nothing plays
         media = {
           min_length = 80;
-          max_length = 160;
-          art_size = 20;
+          max_length = 150;
+          art_size = 24;
           title_scroll = "always";
           hide_when_no_media = true;
         };
@@ -368,8 +364,9 @@
 
         active_window = {
           display = "icon_and_text";
-          max_length = 280;
+          max_length = 300;
           title_scroll = "on_hover";
+          color = "secondary";
         };
 
         workspaces = {
@@ -379,7 +376,7 @@
           focused_color = "primary";
           occupied_color = "tertiary";
           empty_color = "outline";
-          pill_scale = 1.5;
+          pill_scale = 1.2;
           active_pill_size = 2.4;
           hide_when_empty = true;
         };
