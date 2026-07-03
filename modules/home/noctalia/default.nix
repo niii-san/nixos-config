@@ -278,8 +278,11 @@
 
           start = [
             "control-center"
+            "gap"
             "clock"
+            "gap"
             "weather"
+            "gap"
             "gap"
             "active_window"
           ];
@@ -288,19 +291,23 @@
             "media"
             "media_viz"
             "gap"
+            "gap"
             "cpu"
             "ram"
             "network"
+            "gap"
             "gap"
             "bluetooth"
             "volume"
             "microphone"
             "brightness"
             "gap"
+            "gap"
             "tray"
-            "screenshot"
+            # "screenshot"
             "clipboard"
             "notifications"
+            "gap"
             "gap"
             "battery"
             "caffeine"
@@ -320,7 +327,7 @@
         };
 
         clock = {
-          format = "󰃭 {:%a %d %b}   {:%I:%M %p}";
+          format = "{:%H:%M:%S} 󰃭 {:%a %d %b}";
           tooltip_format = "{:%A, %d %B %Y — %I:%M:%S %p}";
           color = "primary";
         };
@@ -328,12 +335,13 @@
         weather = {
           show_condition = true;
           show_temperature = true;
+          color = "primary";
         };
 
         # breathing room between widget groups
         gap = {
           type = "spacer";
-          length = 16;
+          length = 18;
         };
 
         # song + album art, vanishes when nothing plays
@@ -370,8 +378,8 @@
           focused_color = "primary";
           occupied_color = "tertiary";
           empty_color = "outline";
-          pill_scale = 1.0;
-          active_pill_size = 2.4;
+          pill_scale = 1.2;
+          active_pill_size = 2.6;
         };
 
         tray = {
@@ -463,20 +471,20 @@
 
           # wide linear bars along the bottom (fancy_* is radial-only)
           viz_floor = {
-            type = "audio_visualizer";
+            type = "fancy_audio_visualizer";
             output = "eDP-1";
             cx = 1024.0;
-            cy = 1150.0;
-            box_width = 900.0;
-            box_height = 150.0;
+            cy = 1140.0;
+            box_width = 880.0;
+            box_height = 200.0;
             rotation = 0.0;
             settings = {
-              bands = 64;
-              mirrored = true;
-              centered = true;
-              show_when_idle = false;
-              color_1 = "primary";
-              color_2 = "tertiary";
+              visualization_mode = "bars";
+              bar_width = 0.6;
+              sensitivity = 1.5;
+              fade_when_idle = true;
+              primary_color = "primary";
+              secondary_color = "tertiary";
             };
           };
         };
