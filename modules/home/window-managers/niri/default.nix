@@ -327,46 +327,40 @@
 
         "Mod+Escape".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "sessionMenu"
-          "toggle"
+          "msg"
+          "panel-toggle"
+          "session"
         ];
 
         # Launcher
         "Mod+Space".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
+          "msg"
+          "panel-toggle"
           "launcher"
-          "toggle"
         ];
 
         # controlCenter
         "Mod+Shift+Space".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "controlCenter"
-          "toggle"
+          "msg"
+          "panel-toggle"
+          "control-center"
         ];
 
         # Noctalia Settings
         "Mod+Shift+Comma".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "settings"
-          "toggle"
+          "msg"
+          "settings-toggle"
         ];
 
         # Wallpaper picker
         "Mod+W".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
+          "msg"
+          "panel-toggle"
           "wallpaper"
-          "toggle"
         ];
 
         "Mod+V".action.spawn = [
@@ -453,31 +447,25 @@
 
         "Mod+Alt+L".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "lockScreen"
+          "msg"
+          "session"
           "lock"
         ];
         "Mod+Shift+B".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "bar"
-          "toggle"
+          "msg"
+          "bar-toggle"
         ];
 
         "Mod+Shift+N".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "nightLight"
-          "toggle"
+          "msg"
+          "nightlight-toggle"
         ];
         "Mod+Shift+L".action.spawn = [
           "noctalia"
-          "ipc"
-          "call"
-          "lockScreen"
+          "msg"
+          "session"
           "lock"
         ];
 
@@ -563,7 +551,7 @@
   #   timeouts = [
   #     {
   #       timeout = 960;
-  #       command = "noctalia ipc call lockscreen lock";
+  #       command = "noctalia msg session lock";
   #     }
   #   ];
   # };
